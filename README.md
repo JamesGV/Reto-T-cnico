@@ -9,4 +9,4 @@ Pasos para la ejecución del código:
 
 Nota: La interacción del programa se hace a través de la consola. El programa imprime en pantalla y el usuario configura el juego y posteriormente el jugador interactua con el juego ingresando respuestas a través del teclado.
 
-
+Nota. en el código, se da un ejemplo de prueba del programa.
