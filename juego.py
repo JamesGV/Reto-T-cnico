@@ -53,3 +53,12 @@ class juego:
             print(f'{self.literales[i-1]}. {self.preguntas[self.ronda-1,self.posicion_aleatoria,i]}\n')
         self.respuesta_ingresada = input('Seleccione la respuesta correcta (a, b, c, d)\n') #Recibe la respuesta ingresada por el jugador
         self.evaluar_pregunta() #Invoca este método para evaluar si la respuesta es correcta o no
+
+    def evaluar_pregunta(self): # método que evalua si la respuesta ingresada por el jugador es correcta o no
+        if self.respuesta_ingresada == self.preguntas[self.ronda-1,self.posicion_aleatoria,5]:
+            print('Respuesta correcta\n')
+            self.puntaje(True) #Se invoa el método donde se suma el puntaje ganado en la ronda
+        else:
+            print('Respuesta incorrecta\n')
+            self.juego_habilitado = False
+            self.puntaje(False) #Se invoca el método para asignar un puntaje de 0, debido a que el jugador se equivocó
