@@ -85,3 +85,10 @@ class juego:
                 continuar = False
                 break
         return continuar
+
+#################### CÓDIGO DE PRUEBA ################################################################
+
+jugador_1=juego("James García", 30) #Se instancia la clase y se crea el objeto "jugador_1".
+jugador_1.configurar_juego() #Se invoca este método para configurar el juego, es decir, para ingresar todas las preguntas y respuestas.
+jugador_1.iniciar_juego() #Se invoca este método para dar inicio al juego, los demás métodos de la clase se invocan internamente.
+######################################################################################################
