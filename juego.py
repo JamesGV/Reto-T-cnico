@@ -62,3 +62,11 @@ class juego:
             print('Respuesta incorrecta\n')
             self.juego_habilitado = False
             self.puntaje(False) #Se invoca el método para asignar un puntaje de 0, debido a que el jugador se equivocó
+
+    def puntaje(self,sumar_puntaje): #método para acumular puntos en cada ronda
+        if sumar_puntaje:
+            self.puntos += 100*self.ronda #si la respuesta es correcta, se suman los puntos correspondientes a cada nivel (100*número de ronda)
+        else:
+            self.puntos = 0 #si la respuesta es incorrecta, el puntaje final será de 0 y el juego finalizará
+        print(f'Puntaje actual: {self.puntos}\n') #Imprime en pantalla el puntaje
+
