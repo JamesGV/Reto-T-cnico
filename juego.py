@@ -12,4 +12,9 @@ class juego:
         self.literales=['a','b','c','d'] #Lista con los literales de las respuestas, está se iterará en algunos métodos de esta clase 
         self.preguntas = np.empty(shape=(5,5,6), dtype='U100') #Se crea un arreglo vacío de 3 dimensiones (5 rondas, 5 preguntas por ronda,6 elementos 
         #por fila: 1 pregunta, 4 respuestas y el literal que corresponde a la respuesta correcta)
+
+        def info(self): #método que despliega información referente al jugador
+            print(f'Nombre del jugador: {self.nombre}\n') #Imprimir en pantalla el nombre del jugador
+            print(f'Edad del jugador: {self.edad}\n') #Imprime en pantalla la edad del juigador
+
         
