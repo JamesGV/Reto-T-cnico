@@ -70,3 +70,5 @@ class juego:
             self.puntos = 0 #si la respuesta es incorrecta, el puntaje final será de 0 y el juego finalizará
         print(f'Puntaje actual: {self.puntos}\n') #Imprime en pantalla el puntaje
 
+    def fin_juego(self): #método que imprime en pantalla el final del juego, ya sea porque el jugador completó las 5 rondas, se retiró o perdió.
+        print(f'Fin del juego \nSu puntaje final ha sido: {self.puntos}') #Imprime el total de puntos ganados en el juego.
