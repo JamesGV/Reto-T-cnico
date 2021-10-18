@@ -28,4 +28,17 @@ class juego:
                 self.preguntas[ronda,pregunta,5] = input('Ingrese el literal de respuesta correcta (a,b,c,d):\n') #Para cada pregunta, se debe ingresar
                 #el literal de la respuesta correcta
         print(self.preguntas)       # Al final de la configuración, se imprime en pantalla el arreglo de 3 dimensiones con todas las preguntas 
-        #y respuestas configuradas.  
+        #y respuestas configuradas.
+
+    def iniciar_juego(self): #método con el que se inicia el juego, con esto empieza una interacción con el jugador.
+        self.juego_habilitado = True
+        self.info()
+        print('Bienvenido al juego!!!!!!\n')
+        for i in range(1,6): #Se iteran 5 rondas
+            if i > 1: #Para cada ronda, se le da la opción al jugador de continuar o retirarse
+                if not(self.continuar_juego()):
+                    break
+            self.desplegar_pregunta(i) #Se invoca el método para desplegar pregunta en pantalla
+            if not(self.juego_habilitado): #si el jugador se equivoca en alguna respuesta, se finaliza el juego
+                break
+        self.fin_juego() #se invoca el método con el que se finaliza el juego 
