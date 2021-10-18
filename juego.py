@@ -42,3 +42,14 @@ class juego:
             if not(self.juego_habilitado): #si el jugador se equivoca en alguna respuesta, se finaliza el juego
                 break
         self.fin_juego() #se invoca el método con el que se finaliza el juego 
+
+    def desplegar_pregunta(self,ronda): # método que despliega en cada ronda, una pregunta aleatoria de las 5 posibles
+        self.ronda=ronda
+        print(f'Pregunta #{self.ronda}:\n') # informa acerca de en qué ronda se encuentra el jugador
+        self.posicion_aleatoria=np.random.randint(5) #Se selecciona aleatoriamente un número entre 0 y 4
+        print(f'Por {100*self.ronda + self.puntos} puntos\n') #Para cada ronda los puntos posibles a ganar es: 100*número de ronda
+        print(f'{self.preguntas[ronda-1,self.posicion_aleatoria,0]}\n') #Imprime en pantalla la pregunta seleccionada aleatoriamente
+        for i in range(1,5): #Itera todas las respuestas de la pregunta seleccionada y las imprime en pantalla
+            print(f'{self.literales[i-1]}. {self.preguntas[self.ronda-1,self.posicion_aleatoria,i]}\n')
+        self.respuesta_ingresada = input('Seleccione la respuesta correcta (a, b, c, d)\n') #Recibe la respuesta ingresada por el jugador
+        self.evaluar_pregunta() #Invoca este método para evaluar si la respuesta es correcta o no
