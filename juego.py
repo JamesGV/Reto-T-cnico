@@ -17,4 +17,15 @@ class juego:
             print(f'Nombre del jugador: {self.nombre}\n') #Imprimir en pantalla el nombre del jugador
             print(f'Edad del jugador: {self.edad}\n') #Imprime en pantalla la edad del juigador
 
-        
+    def configurar_juego(self): #método para configurar el juego, acá se ingresan todas las preguntas y respuestas. Se va recorriendo el arreglo
+        #y se va rellenando con las preguntas y respuestas
+        for ronda in range(0,5): #Itera cada ronda del juego (5 rondas)
+            print(f'Preguntas de la ronda {ronda+1}\n')
+            for pregunta in range(0,5): #Itera todas las preguntas de una ronda (5 preguntas por ronda)
+                self.preguntas[ronda,pregunta,0]=input(f'Ingrese la pregunta # {pregunta+1} (Máximo 100 caracteres):\n')
+                for respuesta in range(0,4): #Itera todas las respuestas de una pregunta (4 respuestas por pregunta)
+                    self.preguntas[ronda,pregunta,respuesta+1]=input(f'Ingrese la respuesta {self.literales[respuesta]} (Máximo 100 caracteres):\n')
+                self.preguntas[ronda,pregunta,5] = input('Ingrese el literal de respuesta correcta (a,b,c,d):\n') #Para cada pregunta, se debe ingresar
+                #el literal de la respuesta correcta
+        print(self.preguntas)       # Al final de la configuración, se imprime en pantalla el arreglo de 3 dimensiones con todas las preguntas 
+        #y respuestas configuradas.  
