@@ -72,3 +72,16 @@ class juego:
 
     def fin_juego(self): #método que imprime en pantalla el final del juego, ya sea porque el jugador completó las 5 rondas, se retiró o perdió.
         print(f'Fin del juego \nSu puntaje final ha sido: {self.puntos}') #Imprime el total de puntos ganados en el juego.
+
+    def continuar_juego(self): # método que se invoca cada vez que el jugador pasa de ronda, se le da la oportunidad de continuar o de retirarse. 
+        #Si se retira, obtiene los puntos acumulados hasta el momento.
+        continuar = np.NaN
+        while True:
+            continuar_entrada = input('Desea continuar el juego? \nIngrese "sí" para continuar. \nIngrese "no" para retirarse.\n')
+            if continuar_entrada == 'sí':
+                continuar = True
+                break
+            elif continuar_entrada == 'no':
+                continuar = False
+                break
+        return continuar
